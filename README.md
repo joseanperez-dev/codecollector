@@ -1,0 +1,2 @@
+- Para la ruta del directorio raíz del objetivo usar la ruta absoluta.
+- Para el nombre del archivo no tiene que llevar el tipo del mismo, solo el nombre.
