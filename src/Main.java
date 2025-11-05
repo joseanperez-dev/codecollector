@@ -13,8 +13,10 @@ public class Main {
         System.out.println("Escribe la ruta del directorio del que quieres recopilar los archivos:");
         String baseFolderPath = scanner.nextLine();
         Collector collector = new Collector();
-        collector.collectJavaFiles(baseFolderPath);
-        Map<File, List<File>> filesMap = collector.getJavaFiles();
+        System.out.println("Escribe una de estas opciones:\n\t- .java\n\t- application.properties\n\t- pom.xml");
+        String fileType = scanner.nextLine();
+        collector.collectFiles(baseFolderPath, fileType);
+        Map<File, List<File>> filesMap = collector.getFiles();
         Set<File> keys = filesMap.keySet();
         for (File folder : keys) {
             List<File> fileList = filesMap.get(folder);
@@ -30,7 +32,7 @@ public class Main {
 
         System.out.println("Introduce el nombre del archivo en el que quieres guardar el texto de los archivos recopilados:");
         String fileName = scanner.nextLine();
-        FileProducer fileProducer = new FileProducer(filesMap, baseFolderPath, fileName);
+        FileProducer fileProducer = new FileProducer(filesMap, baseFolderPath, ".", fileName);
         try {
             fileProducer.createFile();
             fileProducer.writeFile();

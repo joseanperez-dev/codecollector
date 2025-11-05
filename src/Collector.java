@@ -11,7 +11,7 @@ public class Collector {
         this.filesMap = new HashMap<>();
     }
 
-    public void collectJavaFiles(String path) {
+    public void collectFiles(String path, String typeFile) {
         File folder = new File(path);
         File[] files = folder.listFiles();
         List<File> subFolders = new ArrayList<>();
@@ -20,7 +20,7 @@ public class Collector {
             if (file.isDirectory()) {
                 subFolders.add(file);
             }
-            else if (file.isFile() && file.getName().contains(".java")) {
+            else if (file.isFile() && file.getName().contains(typeFile)) {
                 javaFiles.add(file);
             }
         }
@@ -30,11 +30,11 @@ public class Collector {
         }
 
         for (File subFolder : subFolders) {
-            collectJavaFiles(path + "/" + subFolder.getName());
+            collectFiles(path + "/" + subFolder.getName(), typeFile);
         }
     }
 
-    public Map<File, List<File>> getJavaFiles() {
+    public Map<File, List<File>> getFiles() {
         return this.filesMap;
     }
 }

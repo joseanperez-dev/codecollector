@@ -8,11 +8,13 @@ public class FileProducer {
     public String targetPath;
     public String name;
     public File file;
+    public String baseFolderPath;
 
-    public FileProducer(Map<File, List<File>> filesMap, String targetPath, String name) {
+    public FileProducer(Map<File, List<File>> filesMap, String baseFolderPath, String targetPath, String name) {
         this.filesMap = filesMap;
         this.targetPath = targetPath;
         this.name = name;
+        this.baseFolderPath = baseFolderPath;
     }
 
     public void createFile() throws IOException {
@@ -27,12 +29,25 @@ public class FileProducer {
 
     public void writeFile() {
         Set<File> keys = this.filesMap.keySet();
-        String sal = "";
+        String sal = """
+                <head>
+                    <meta charset="UTF-8"/>
+                    <style>
+                        pre {
+                            margin: 1rem;
+                            padding: 1rem;
+                            border: 1px solid black;
+                            page-break-inside: avoid;
+                        }
+                    </style>
+                    <link rel="stylesheet" href="style.css"/>
+                </head>
+                """;
         for (File key : keys) {
             String folderName = key.getName();
             List<File> files = this.filesMap.get(key);
             for (File file : files) {
-                sal += "<div>\n  <h1>/" + folderName + "/" + file.getName() + "</h1>\n";
+                sal += "<div>\n  <h1>/" + baseFolderPath + "/" + file.getName() + "</h1>\n";
                 sal += "  <pre>\n";
                 try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                     String line = "";
