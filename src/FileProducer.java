@@ -28,7 +28,7 @@ public class FileProducer {
     }
 
     public void writeFile() {
-        Set<File> keys = this.filesMap.keySet();
+        //Set<File> keys = this.filesMap.keySet()
         String sal = """
                 <head>
                     <meta charset="UTF-8"/>
@@ -43,11 +43,11 @@ public class FileProducer {
                     <link rel="stylesheet" href="style.css"/>
                 </head>
                 """;
-        for (File key : keys) {
-            String folderName = key.getName();
+        for (Map.Entry<File, List<File>> entry : filesMap.entrySet()) {
+            File key = entry.getKey();
             List<File> files = this.filesMap.get(key);
             for (File file : files) {
-                sal += "<div>\n  <h1>/" + baseFolderPath + "/" + file.getName() + "</h1>\n";
+                sal += "<div>\n  <h2>" + file.getPath().substring(baseFolderPath.length())/* + "/" + file.getName()*/ + "</h2>\n";
                 sal += "  <pre>\n";
                 try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                     String line = "";

@@ -8,14 +8,13 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         //String baseFolderPath = "/home/jose/taller/aparte/CodeCollector-project";
-        System.out.println("Escribe la ruta del directorio del que quieres recopilar los archivos:");
-        String baseFolderPath = scanner.nextLine();
+        String baseFolderPath = args[0];
         Collector collector = new Collector();
-        System.out.println("Escribe una de estas opciones:\n\t- .java\n\t- application.properties\n\t- pom.xml");
-        String fileType = scanner.nextLine();
-        collector.collectFiles(baseFolderPath, fileType);
+        collector.collectFiles(baseFolderPath, "pom.xml");
+        collector.collectFiles(baseFolderPath, "application.properties");
+        collector.collectFiles(baseFolderPath, "application.yml");
+        collector.collectFiles(baseFolderPath, ".java");
         Map<File, List<File>> filesMap = collector.getFiles();
         Set<File> keys = filesMap.keySet();
         for (File folder : keys) {
@@ -30,8 +29,8 @@ public class Main {
         System.out.println("----------------------------------------------");
         System.out.println();
 
-        System.out.println("Introduce el nombre del archivo en el que quieres guardar el texto de los archivos recopilados:");
-        String fileName = scanner.nextLine();
+        // System.out.println("Introduce el nombre del archivo en el que quieres guardar el texto de los archivos recopilados:");
+        String fileName = args[1];
         FileProducer fileProducer = new FileProducer(filesMap, baseFolderPath, ".", fileName);
         try {
             fileProducer.createFile();
