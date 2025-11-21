@@ -11,9 +11,9 @@ public class Main {
         //String baseFolderPath = "/home/jose/taller/aparte/CodeCollector-project";
         String baseFolderPath = args[0];
         Collector collector = new Collector();
-        collector.collectFiles(baseFolderPath, "pom.xml");
-        collector.collectFiles(baseFolderPath, "application.properties");
-        collector.collectFiles(baseFolderPath, "application.yml");
+        collector.collectFiles(baseFolderPath, ".xml");
+        collector.collectFiles(baseFolderPath, ".properties");
+        collector.collectFiles(baseFolderPath, ".yml");
         collector.collectFiles(baseFolderPath, ".java");
         Map<File, List<File>> filesMap = collector.getFiles();
         Set<File> keys = filesMap.keySet();
