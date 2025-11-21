@@ -54,7 +54,8 @@ public class FileProducer {
                     while ((line = br.readLine()) != null) {
                         line = line.replace("<", "&lt;");
                         line = line.replace(">", "&gt;");
-                        sal += "    " + line + "\n";
+                        line = line.replace("\t", "  ");
+                        sal += line + "\n";
                     }
                 }
                 catch (IOException exception) {

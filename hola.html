@@ -1,0 +1,251 @@
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        pre {
+            margin: 1rem;
+            padding: 1rem;
+            border: 1px solid black;
+            page-break-inside: avoid;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<div>
+  <h2>/pom.xml</h2>
+  <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+        &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    
+        &lt;parent&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+            &lt;version&gt;3.4.3&lt;/version&gt;
+            &lt;relativePath/&gt;
+        &lt;/parent&gt;
+    
+        &lt;groupId&gt;japdp&lt;/groupId&gt;
+        &lt;artifactId&gt;service-hello&lt;/artifactId&gt;
+        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+        &lt;name&gt;service-hello&lt;/name&gt;
+        &lt;description&gt;service-hello&lt;/description&gt;
+    
+        &lt;properties&gt;
+            &lt;java.version&gt;17&lt;/java.version&gt;
+            &lt;spring-cloud.version&gt;2024.0.0&lt;/spring-cloud.version&gt;
+        &lt;/properties&gt;
+    
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    
+        &lt;dependencyManagement&gt;
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                    &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                    &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
+                    &lt;type&gt;pom&lt;/type&gt;
+                    &lt;scope&gt;import&lt;/scope&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
+        &lt;/dependencyManagement&gt;
+    
+        &lt;build&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                    &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+                &lt;/plugin&gt;
+            &lt;/plugins&gt;
+        &lt;/build&gt;
+    &lt;/project&gt;
+  </pre>
+</div>
+<div>
+  <h2>/.idea/workspace.xml</h2>
+  <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;project version="4"&gt;
+      &lt;component name="AutoImportSettings"&gt;
+        &lt;option name="autoReloadType" value="SELECTIVE" /&gt;
+      &lt;/component&gt;
+      &lt;component name="ChangeListManager"&gt;
+        &lt;list default="true" id="d23bd8a0-47b0-46f2-9025-7b97b4597b12" name="Changes" comment="" /&gt;
+        &lt;option name="SHOW_DIALOG" value="false" /&gt;
+        &lt;option name="HIGHLIGHT_CONFLICTS" value="true" /&gt;
+        &lt;option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" /&gt;
+        &lt;option name="LAST_RESOLUTION" value="IGNORE" /&gt;
+      &lt;/component&gt;
+      &lt;component name="ProjectColorInfo"&gt;&lt;![CDATA[{
+      "associatedIndex": 1
+    }]]&gt;&lt;/component&gt;
+      &lt;component name="ProjectId" id="35n5DqBTWA1wHl6PdDJxyGlriDe" /&gt;
+      &lt;component name="ProjectViewState"&gt;
+        &lt;option name="hideEmptyMiddlePackages" value="true" /&gt;
+        &lt;option name="showLibraryContents" value="true" /&gt;
+      &lt;/component&gt;
+      &lt;component name="PropertiesComponent"&gt;&lt;![CDATA[{
+      "keyToString": {
+        "ModuleVcsDetector.initialDetectionPerformed": "true",
+        "RunOnceActivity.ShowReadmeOnStart": "true",
+        "last_opened_file_path": "/home/jose/taller/java/PracticasFeignTutorial/FeignTutorial-Prueba02/service-hello"
+      }
+    }]]&gt;&lt;/component&gt;
+      &lt;component name="TaskManager"&gt;
+        &lt;task active="true" id="Default" summary="Default task"&gt;
+          &lt;changelist id="d23bd8a0-47b0-46f2-9025-7b97b4597b12" name="Changes" comment="" /&gt;
+          &lt;created&gt;1763732880241&lt;/created&gt;
+          &lt;option name="number" value="Default" /&gt;
+          &lt;option name="presentableId" value="Default" /&gt;
+          &lt;updated&gt;1763732880241&lt;/updated&gt;
+        &lt;/task&gt;
+        &lt;servers /&gt;
+      &lt;/component&gt;
+    &lt;/project&gt;
+  </pre>
+</div>
+<div>
+  <h2>/.idea/encodings.xml</h2>
+  <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;project version="4"&gt;
+      &lt;component name="Encoding"&gt;
+        &lt;file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" /&gt;
+      &lt;/component&gt;
+    &lt;/project&gt;
+  </pre>
+</div>
+<div>
+  <h2>/.idea/compiler.xml</h2>
+  <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;project version="4"&gt;
+      &lt;component name="CompilerConfiguration"&gt;
+        &lt;annotationProcessing&gt;
+          &lt;profile name="Maven default annotation processors profile" enabled="true"&gt;
+            &lt;sourceOutputDir name="target/generated-sources/annotations" /&gt;
+            &lt;sourceTestOutputDir name="target/generated-test-sources/test-annotations" /&gt;
+            &lt;outputRelativeToContentRoot value="true" /&gt;
+            &lt;module name="service-hello" /&gt;
+          &lt;/profile&gt;
+        &lt;/annotationProcessing&gt;
+      &lt;/component&gt;
+      &lt;component name="JavacSettings"&gt;
+        &lt;option name="ADDITIONAL_OPTIONS_OVERRIDE"&gt;
+          &lt;module name="service-hello" options="-parameters" /&gt;
+        &lt;/option&gt;
+      &lt;/component&gt;
+    &lt;/project&gt;
+  </pre>
+</div>
+<div>
+  <h2>/.idea/misc.xml</h2>
+  <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;project version="4"&gt;
+      &lt;component name="ExternalStorageConfigurationManager" enabled="true" /&gt;
+      &lt;component name="MavenProjectsManager"&gt;
+        &lt;option name="originalFiles"&gt;
+          &lt;list&gt;
+            &lt;option value="$PROJECT_DIR$/pom.xml" /&gt;
+          &lt;/list&gt;
+        &lt;/option&gt;
+      &lt;/component&gt;
+      &lt;component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK" /&gt;
+    &lt;/project&gt;
+  </pre>
+</div>
+<div>
+  <h2>/.idea/jarRepositories.xml</h2>
+  <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;project version="4"&gt;
+      &lt;component name="RemoteRepositoriesConfiguration"&gt;
+        &lt;remote-repository&gt;
+          &lt;option name="id" value="central" /&gt;
+          &lt;option name="name" value="Central Repository" /&gt;
+          &lt;option name="url" value="https://repo.maven.apache.org/maven2" /&gt;
+        &lt;/remote-repository&gt;
+        &lt;remote-repository&gt;
+          &lt;option name="id" value="central" /&gt;
+          &lt;option name="name" value="Maven Central repository" /&gt;
+          &lt;option name="url" value="https://repo1.maven.org/maven2" /&gt;
+        &lt;/remote-repository&gt;
+        &lt;remote-repository&gt;
+          &lt;option name="id" value="jboss.community" /&gt;
+          &lt;option name="name" value="JBoss Community repository" /&gt;
+          &lt;option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" /&gt;
+        &lt;/remote-repository&gt;
+      &lt;/component&gt;
+    &lt;/project&gt;
+  </pre>
+</div>
+<div>
+  <h2>/target/classes/application.properties</h2>
+  <pre>
+    server.port=8081
+    spring.application.name=service-hello
+    eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+  </pre>
+</div>
+<div>
+  <h2>/target/maven-archiver/pom.properties</h2>
+  <pre>
+    artifactId=service-hello
+    groupId=japdp
+    version=0.0.1-SNAPSHOT
+  </pre>
+</div>
+<div>
+  <h2>/src/main/resources/application.properties</h2>
+  <pre>
+    server.port=8081
+    spring.application.name=service-hello
+    eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+  </pre>
+</div>
+<div>
+  <h2>/src/main/java/japdp/HelloController.java</h2>
+  <pre>
+    package japdp;
+    
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.PathVariable;
+    import org.springframework.web.bind.annotation.RestController;
+    
+    @RestController
+    public class HelloController {
+        @GetMapping("{name}")
+        public String sayHello(@PathVariable String name) {
+            return "Hola " + name;
+        }
+    }
+  </pre>
+</div>
+<div>
+  <h2>/src/main/java/japdp/ServiceHello.java</h2>
+  <pre>
+    package japdp;
+    
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+    
+    @SpringBootApplication
+    @EnableDiscoveryClient
+    public class ServiceHello {
+        public static void main(String[] args) {
+            SpringApplication.run(ServiceHello.class, args);
+        }
+    }
+  </pre>
+</div>
